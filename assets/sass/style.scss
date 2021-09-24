@@ -1,0 +1,165 @@
+html, body {
+	/* IE 10-11 didn't like using min-height */
+	height: 100%;
+}
+
+* {
+	// box-sizing: border-box;
+}
+
+body {
+	background-color: #FFF4EC;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.25rem;
+	margin: 0;
+	padding: 0;
+	
+	@media (max-width: 768px) {
+		font-size: 1.15rem;
+	}
+}
+
+h1 {
+	margin: 1.5rem 0;
+	font-size: 2rem;
+	font-weight: normal;
+	
+	@media (max-width: 768px) {
+		font-size: 1.65rem;
+	}
+}
+
+a {
+	color: inherit;
+	
+	&:hover,
+	&.nav-link-active {
+		color: #966b9d;
+		text-decoration: none;
+	}
+}
+
+p,ul,li {
+	line-height: 1.55;
+	
+	small & {
+		line-height: 1.35;
+	}
+}
+
+.content {
+	flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+}
+
+.footer {
+	flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+	
+	padding: 4vh 0 3vh;
+	text-align: center;
+}
+
+.container {
+	max-width: 710px;
+	margin: 0 auto;
+	
+	@media (max-width: 768px) {
+		padding: 0 2rem;
+	}
+}
+
+.header {
+	background-color: #FFF4EC;
+	// box-shadow: 0px 0px 4px 0px rgb(#333,0.2);
+	padding: 4vh 0 1vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	
+	@media (max-width: 768px) {
+		padding: 1vh 0 0;
+		text-align: center;
+	}
+	
+	.logo {
+		a {
+			text-decoration: none;
+		}
+	}
+	
+	.nav {
+		display: flex;
+		margin-bottom: 1.5rem;
+		justify-content: space-between;
+		
+		@media (max-width: 768px) {
+			flex-wrap: wrap;
+			margin-bottom: 1rem;
+		}
+		
+		ul {
+			display: flex;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			
+			@media (max-width: 768px) {
+				margin: 0 auto 0.5rem;
+				
+				&.nav-left {
+					justify-content: center;
+					width: 100%;
+				}
+			}
+			
+			li {
+				font-size: 1.25rem;
+				margin: 0;
+				margin-right: 1.75rem;
+				padding: 0;
+				
+				@media (max-width: 768px) {
+					font-size: 1.15rem;
+					flex-wrap: wrap;
+					margin-right: 1.25rem;
+				}
+				
+				&:last-of-type {
+					margin-right: 0;
+				}
+				
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	
+	+ .section-heading {
+		padding-top: calc(25vh);
+		
+		@media (max-width: 768px) {
+			padding-top: 30vh;
+		}
+	}
+	
+   + .section-plain {
+		padding-top: calc(4vh + 2rem + 3rem + 1.25rem + 1.5rem + 2rem);
+		
+		@media (max-width: 768px) {
+			padding-top: 35vh;
+		}
+	}
+}
+
+.section {
+	&.section-heading {
+		font-size: 1.5rem;
+		
+		@media (max-width: 768px) {
+			font-size: 1.35rem;
+		}
+	}
+}
